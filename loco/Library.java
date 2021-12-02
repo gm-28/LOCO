@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Library {
-    public ArrayList<String> songs = new ArrayList<>();
+    public ArrayList<Music> musics = new ArrayList<>();
+    public ArrayList<Album> albums = new ArrayList<>();
+    //public ArrayList<Artits> artit = new ArrayList<>();//impletmentar tits
 
     public void read_file(String path) throws InvalidDataException, UnsupportedTagException, IOException {
         Mp3File song = new Mp3File(path);
@@ -23,8 +25,8 @@ public class Library {
             //Mp3File add = new Mp3File("/src/DJ LILOCOX - PAZ & AMOR/"+file.getName());
 
             if(file.getName().endsWith(".mp3")) {
-                songs.add(file.getAbsolutePath());
-                System.out.println("File path: " + songs.get(i));
+                musics.add(new Music(file.getAbsolutePath()));
+                System.out.println("File path: " + musics.get(i).filePath);
                 System.out.println(" ");
                 i++;
             }
@@ -36,9 +38,7 @@ public class Library {
             System.out.println(" ");
             i++;*/
         }
-        Mp3File teste = new Mp3File(songs.get(0));
+        Mp3File teste = new Mp3File(musics.get(0).filePath);
         System.out.println("Length of this mp3 is: " + teste.getLengthInSeconds() + " seconds");
-
-
     }
 }

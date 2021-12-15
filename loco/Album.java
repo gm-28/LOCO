@@ -15,15 +15,11 @@ public class Album {
 
     public Album(String title){
         this.title = title;
+        musics = new ArrayList<Music>();
     }
 
-    public void songAdd(String song_path) throws InvalidDataException, UnsupportedTagException, IOException {
-        Mp3File curr = new Mp3File(song_path);
-        if (curr.hasId3v1Tag()) {
-            ID3v1 id3v1Tag = curr.getId3v1Tag(); //verifica se tem a tag e insere a faixa na lista consoante o track number
-            int i = Integer.parseInt(id3v1Tag.getTrack());
-            musics.add(i, new Music(song_path));
-        }
+    public void musicsAdd(Music music){
+        musics.add(music);
     }
 }
 

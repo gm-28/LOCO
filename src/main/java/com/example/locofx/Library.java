@@ -32,7 +32,7 @@ public class Library {
 
         for (Path file : filesList) {
                 Mp3File curr_mp3 = new Mp3File(file.toAbsolutePath().toString());
-                Music curr_music = new Music(file.toAbsolutePath().toString());
+                Music curr_music = new Music(file.toAbsolutePath().toString(),curr_mp3.getId3v2Tag().getArtist());
 
                 if (!musics.contains(curr_music)){
                     musics.add(curr_music);
@@ -53,7 +53,6 @@ public class Library {
     }
 
     private void createLibrary(Music curr_music, Album curr_alb, Artist curr_artist){
-
         int index = artist_exists(curr_artist.name);
         if (index<0){
             artists.add(curr_artist);
@@ -80,7 +79,7 @@ public class Library {
 
     //Tf the album exists returns its index, if not returns -1
 
-    private int artist_exists(String name){
+    public int artist_exists(String name){
         for(int i=0;i<artists.size();i++){
             if (Objects.equals(artists.get(i).name, name))
                 return i;

@@ -4,6 +4,7 @@ module com.example.locofx {
     requires mp3agic;
     requires java.desktop;
     requires javafx.media;
+    requires java.sql;
 
 
     opens com.example.locofx to javafx.fxml;

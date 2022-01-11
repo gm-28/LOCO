@@ -14,12 +14,14 @@ public class locoApp extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("player_sketch.fxml")));
         primaryStage.setScene(new Scene(root));
+        primaryStage.setMinWidth(710);
+        primaryStage.setMinHeight(535);
+        primaryStage.setTitle("LOCO");
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-
-
 }

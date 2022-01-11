@@ -6,13 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="318.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locofx.regSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="318.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locofx.regSceneController">
    <children>
-      <TextField layoutX="84.0" layoutY="25.0" promptText="Username" />
-      <TextField layoutX="84.0" layoutY="59.0" promptText="Email" />
-      <PasswordField layoutX="85.0" layoutY="96.0" promptText="Password" />
-      <PasswordField layoutX="85.0" layoutY="132.0" promptText="Rewrite Password" />
-      <Button layoutX="129.0" layoutY="168.0" mnemonicParsing="false" text="Sign Up" />
-      <Label layoutX="144.0" layoutY="205.0" text="Status" />
+      <TextField fx:id="userField" layoutX="84.0" layoutY="30.0" promptText="Username" styleClass="tf_box" />
+      <PasswordField fx:id="passField" layoutX="84.0" layoutY="66.0" promptText="Password" styleClass="tf_box" />
+      <PasswordField fx:id="repassField" layoutX="84.0" layoutY="102.0" promptText="Rewrite Password" styleClass="tf_box" />
+      <Button fx:id="SignUpButton" layoutX="128.0" layoutY="138.0" mnemonicParsing="false" onAction="#handleSignUpButton" styleClass="trans-logIn-white-border" text="Sign Up" />
+      <Label fx:id="statLabel" alignment="CENTER" layoutX="-1.0" layoutY="175.0" prefHeight="18.0" prefWidth="319.0" />
    </children>
 </AnchorPane>

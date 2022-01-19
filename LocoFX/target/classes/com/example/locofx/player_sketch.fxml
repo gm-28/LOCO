@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="686.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locofx.Controllers.Controller">
+   <left>
+      <VBox fx:id="vboxL" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="artistDisp" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setDisplayArtists" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Artists">
+               <font>
+                  <Font name="Old English Text MT" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="musicsDisp" mnemonicParsing="false" onAction="#displayAlbums" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Albums">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="3.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Old English Text MT" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="albumDisp" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onAction="#displayMusics" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Songs">
+               <font>
+                  <Font name="Old English Text MT" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="3.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="34.0" prefWidth="668.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="directoryField" layoutX="106.0" layoutY="5.0" onMouseClicked="#dirChooser" prefHeight="26.0" prefWidth="559.0" promptText="Directory" styleClass="tf_box_dir" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="3.0" />
+            <Label layoutX="8.0" layoutY="9.0" text="Library directory" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </top>
+   <right>
+      <AnchorPane prefHeight="334.0" prefWidth="158.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logButton" layoutX="2.0" mnemonicParsing="false" onAction="#handleLogButtonAction" prefHeight="31.0" prefWidth="156.0" styleClass="trans-logIn-white-border" text="LOGIN">
+               <font>
+                  <Font name="Old English Text MT" size="14.0" />
+               </font></Button>
+            <ListView fx:id="queueList" layoutX="1.0" layoutY="49.0" prefHeight="281.0" prefWidth="158.0" styleClass="list-cell" AnchorPane.bottomAnchor="4.0" AnchorPane.topAnchor="49.0" />
+            <Label layoutX="62.0" layoutY="31.0" text="Queue" />
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="334.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="listDisplay" layoutX="2.0" layoutY="37.0" onMouseClicked="#listClick" prefHeight="302.0" prefWidth="432.0" styleClass="list-cell" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="37.0">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#queueUp" text="Queue" />
+                        <MenuItem mnemonicParsing="false" onAction="#pushPlay" text="Play" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </ListView>
+            <Label fx:id="currLabel" layoutX="4.0" layoutY="2.0" prefHeight="34.0" prefWidth="422.0" styleClass="label_2" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="126.0" prefWidth="686.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="110.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="113.0" fitWidth="111.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="100.0" prefWidth="543.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <AnchorPane prefHeight="40.0" prefWidth="568.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="songLabel" layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="389.0" styleClass="label_2" textAlignment="CENTER" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="165.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="40.0" prefWidth="543.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ProgressBar fx:id="songProg" layoutX="8.0" layoutY="6.0" prefHeight="21.0" prefWidth="397.0" progress="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="163.0" />
+                        <JFXSlider fx:id="volumeSlider" layoutX="389.0" layoutY="10.0" prefHeight="14.0" prefWidth="148.0" styleClass="jfx-slider" AnchorPane.rightAnchor="6.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="34.0" prefWidth="543.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" layoutY="-6.0" prefHeight="40.0" prefWidth="402.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="141.0">
+                           <children>
+                              <Button fx:id="previousButton" mnemonicParsing="false" onAction="#previousSong" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Previous" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Old English Text MT" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pauseSong" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Pause" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Old English Text MT" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="playButton" mnemonicParsing="false" onAction="#playSong" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Play" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Old English Text MT" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextSong" prefHeight="41.0" prefWidth="100.0" styleClass="button_2" text="Next" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Old English Text MT" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

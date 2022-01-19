@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="484.0" prefWidth="680.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locofx.Controllers.userController">
+   <children>
+      <TextField fx:id="userField" layoutX="201.0" layoutY="189.0" promptText="Insert new Username" styleClass="tf_box" />
+      <PasswordField fx:id="passField" layoutX="201.0" layoutY="152.0" promptText="Insert current Password" styleClass="tf_box" />
+      <PasswordField fx:id="newpassField" layoutX="201.0" layoutY="227.0" promptText="Insert new Password" styleClass="tf_box" />
+      <PasswordField fx:id="repassField" layoutX="201.0" layoutY="263.0" promptText="Rewrite new Password" styleClass="tf_box" />
+      <CheckBox fx:id="changeP" layoutX="361.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleCheckP" styleClass="label" text="Change Password" />
+      <CheckBox fx:id="changeU" layoutX="361.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleCheckU" styleClass="label" text="Change Username" />
+      <Button fx:id="changeButton" layoutX="247.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleChangeButton" styleClass="trans-logIn-white-border" text="Change" />
+      <Label fx:id="statLabel" alignment="CENTER" layoutX="174.0" layoutY="342.0" prefHeight="18.0" prefWidth="206.0" />
+   </children>
+</AnchorPane>

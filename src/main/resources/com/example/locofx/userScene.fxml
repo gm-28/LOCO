@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="694.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.locofx.Controllers.userController">
+   <bottom>
+      <AnchorPane prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+          <Button fx:id="setButton" layoutX="189.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleSetButton" prefHeight="26.0" prefWidth="132.0" styleClass="trans-logIn-white-border" text="Settings" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="logOffButton" layoutX="374.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleLogOffButton" prefHeight="26.0" prefWidth="132.0" styleClass="trans-logIn-white-border" text="Log Off" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane fx:id="anchorPane" prefHeight="392.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="topMusics" layoutX="63.0" layoutY="296.0" prefHeight="150.0" prefWidth="185.0" styleClass="list-cell" />
+            <ListView fx:id="topAlbums" layoutX="255.0" layoutY="296.0" prefHeight="150.0" prefWidth="185.0" styleClass="list-cell" />
+            <ListView fx:id="topArtists" layoutX="447.0" layoutY="296.0" prefHeight="150.0" prefWidth="185.0" styleClass="list-cell" />
+            <Label layoutX="117.0" layoutY="446.0" text="Top 5 Songs">
+               <font>
+                  <Font name="Old English Text MT" size="14.0" />
+               </font></Label>
+            <Label layoutX="306.0" layoutY="446.0" text="Top 5 Albums">
+               <font>
+                  <Font name="Old English Text MT" size="14.0" />
+               </font></Label>
+            <Label layoutX="500.0" layoutY="446.0" text="Top 5 Artists">
+               <font>
+                  <Font name="Old English Text MT" size="14.0" />
+               </font></Label>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="150.0" layoutX="272.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect></ImageView>
+            <Label fx:id="label" layoutX="194.0" layoutY="37.0" text="Welcome To Your Stats Page!">
+               <font>
+                  <Font name="Old English Text MT" size="24.0" />
+               </font></Label>
+            <Label layoutX="229.0" layoutY="260.0" text="This is your most listened album">
+               <font>
+                  <Font name="Old English Text MT" size="18.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
